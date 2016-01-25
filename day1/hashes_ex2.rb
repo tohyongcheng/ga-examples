@@ -14,32 +14,35 @@ users = {
 }
 
 #1
-p users["Arnold"][:twitter]
+users["Arnold"][:twitter]
 
 #2
-p users["John Cena"][:favorite_numbers] << 7
+users["John Cena"][:favorite_numbers] << 7
 
 #3
-users["Yong Cheng"] = {:twitter => "sebastiantoh", :favorite_numbers => [7, 9, 11]}
-p users
+users["Yong Cheng"] = { 
+                        :twitter => "sebastiantoh", 
+                        :favorite_numbers => [7, 9, 11]
+                      }
 
 #4 
-p users["John Cena"][:favorite_numbers]
+users["John Cena"][:favorite_numbers]
 
 #5
-p users["John Cena"][:favorite_numbers].min
+users["John Cena"][:favorite_numbers].min
 
 #6
-p users["Martin Luther"][:favorite_numbers].select {|num| num % 2 == 0}
+users["Martin Luther"][:favorite_numbers].select {|num| num % 2 == 0}
 
 #7
 common_numbers =  users["Arnold"][:favorite_numbers] & \
 users["John Cena"][:favorite_numbers] & \
 users["Martin Luther"][:favorite_numbers]
 
-p common_numbers
-
 #8 
-common_numbers.sort.uniq
+all_numbers =  users["Arnold"][:favorite_numbers] | \
+users["John Cena"][:favorite_numbers] | \
+users["Martin Luther"][:favorite_numbers]
+all_numbers.sort.uniq
 # e.g.
 p [2,6,8,6,4,2].sort.uniq
