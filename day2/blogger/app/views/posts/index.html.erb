@@ -4,8 +4,10 @@
 <br>
 
 <% @posts.each do |post| %>
-  <h3><%= post.title %></h3>
-  <p><%= post.body %></p>
+  <div class="post">
+    <h3><%= post.title %></h3>
+    <p><%= post.body %></p>
 
-  <%= link_to "See more", post_path(post.id) %>
+    <%= link_to "See more", post_path(post.id) %>
+  </div>
 <% end %>
