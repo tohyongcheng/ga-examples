@@ -6,8 +6,17 @@ Rails.application.routes.draw do
   # this is "http://localhost:3000/ aka the main page"
   root 'static_pages#index' 
 
-  get 'magic_ball' => 'magic_ball#result'
   # url is '/magic_ball'
+  get 'magic_ball' => 'magic_ball#result'
+
+  # for secret number
+  get 'guess_secret_number' => "secret_number#guess"
+  # , :as => "guess_secret_number"
+
+  post 'secret_number_results/:guess' => "secret_number#result", :as => "secret_number_results"
+  
+  get 'play_rps' => 'rps#play'
+  post 'rps_result/:weapon' => 'rps#result', :as => "rps_result"
   
 
   # Example of regular route:

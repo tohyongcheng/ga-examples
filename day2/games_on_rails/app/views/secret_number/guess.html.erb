@@ -1,0 +1,6 @@
+<h1>My guess is:</h1>
+
+<!-- We want to generate links here -->
+<% 11.times do |i| %>
+  <%= link_to "Guess #{i}", secret_number_results_path(guess: i), method: :post %>  
+<% end %>
