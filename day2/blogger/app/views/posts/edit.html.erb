@@ -1,6 +1,6 @@
-<h3>New Post</h3>
+<h3>Edit Post</h3>
 
-<%= form_for @post do |f| %>
+<%= form_for @post, url: post_path, method: :put do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <br>

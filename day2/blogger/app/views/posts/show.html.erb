@@ -2,3 +2,5 @@
 <p><%= @post.body %></p>
 
 <%= link_to "Back to all posts", posts_path %>
+<%= link_to "Edit", edit_post_path(@post) %>
+<%= link_to "Delete", post_path(@post), method: :delete %>
