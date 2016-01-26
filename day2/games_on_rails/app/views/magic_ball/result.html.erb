@@ -1,0 +1,18 @@
+<p>
+  You asked: <%= params[:question] || "Nothing" %>
+</p>
+
+<%= form_tag('/magic_ball', method: :get) do %>
+  <%= text_field_tag :question, nil, { placeholder: "Enter your question", class: "question_class" } %>
+  <%= submit_tag "Ask" %>
+<% end %>
+
+<% if params[:question].present? %>
+  <%= image_tag "magic_ball.jpg" %>
+  <h1>The Magic 8 Ball says...</h1>
+  <p>
+    <%= @magic_answer %>
+  </p>
+<% end %>
+
+<!-- cheebaaabom: <%= @cheebaaabom %> -->
