@@ -1,3 +1,8 @@
 <h1>Results</h1>
-
+<p><%= @result %></p>
 <!-- Show results here and what server/user chose -->
+
+<p>You showed a <%= @user_weapon %></p>
+<p>The computer chose <%= @server_weapon %></p>
+
+<%= link_to "Try Again", play_rps_path %>
