@@ -4,3 +4,20 @@
 <%= link_to "Back to all posts", posts_path %>
 <%= link_to "Edit", edit_post_path(@post) %>
 <%= link_to "Delete", post_path(@post), method: :delete %>
+
+<hr>
+
+<% @post.comments.each do |comment| %>
+  <div class="comment">
+    <%= "> " + comment.body %>
+    <%= link_to "Delete", post_comment_path(:post_id => @post.id, :id => comment.id), :method => :delete %>
+    <%# <%= link_to "Delete", post_comment(@post, comment), :method => :delete %>
+  </div>
+<% end %>
+
+<%= form_for Comment.new, :url => post_comments_path(:post_id => @post.id) do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+  <%= f.submit "Create New Comment" %>
+<% end %>
+
