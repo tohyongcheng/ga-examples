@@ -1,0 +1,16 @@
+<h1>
+  Posts Index
+</h1>
+
+<%= link_to "New Post",new_post_path %>
+
+<% @posts.each do |post| %>
+  <div>
+    <h3><%= post.title %></h3>
+      <% if post.image.present? %>
+        <%= image_tag post.image.url(:medium) %>
+      <% end %>
+    <br>
+    <%= link_to "View", post_path(post) %>
+  </div>
+<% end %>
